@@ -1,0 +1,18 @@
+server:
+  port: 8090
+  undertow:
+    threads:
+      io: 16
+      worker: 300
+    buffer-size: 1024
+    direct-buffers: true
+  compression:
+    enabled: true
+    min-response-size: 1
+
+spring:
+  profiles:
+    active: dev
+
+mybatis:
+  mapper-locations: classpath*:/mapper/*.xml

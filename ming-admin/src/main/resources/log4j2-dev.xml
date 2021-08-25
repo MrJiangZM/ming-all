@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="warn" monitorInterval="30">
+
+    <Properties>
+        <Property name="pattern">%d{yyyy-MM-dd HH:mm:ss} %-5p %X{traceId} %c{2}:%L - %m%n</Property>
+    </Properties>
+
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <ThresholdFilter level="info" onMatch="ACCEPT"
+                             onMismatch="DENY"/>
+            <PatternLayout pattern="${pattern}"/>
+<!--            <Encoding>utf-8</Encoding>-->
+        </Console>
+    </Appenders>
+
+    <Loggers>
+        <root level="info">
+            <appender-ref ref="Console"/>
+        </root>
+
+        <logger name="org.springframework.aop.framework.CglibAopProxy" level="ERROR" additivity="false"/>
+        <logger name="springfox.documentation" level="ERROR" additivity="false"/>
+        <logger name="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping" level="ERROR" additivity="false"/>
+        <logger name="org.springframework.core.env.PropertySourcesPropertyResolver" level="ERROR" additivity="false"/>
+        <logger name="org.springframework.web.servlet.DispatcherServlet" level="ERROR" additivity="false"/>
+        <logger name="io.undertow.servlet" level="ERROR" additivity="false"/>
+        <logger name="org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod" level="ERROR"/>
+
+        <logger name="jdbc.sqlonly" level="INFO" additivity="false"/>
+        <logger name="jdbc.resultset" level="INFO" additivity="false"/>
+        <logger name="jdbc.connection" level="INFO" additivity="false"/>
+        <logger name="jdbc.audit" level="INFO" additivity="false"/>
+<!--        <logger name="jdbc.sqltiming" level="INFO" additivity="false"/>-->
+        <logger name="jdbc.resultsettable" level="INFO" additivity="false"/>
+
+    </Loggers>
+</Configuration>

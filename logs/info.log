@@ -1,0 +1,31 @@
+2021-08-11 15:06:26,533:INFO main  (StartupInfoLogger.java:55) - Starting AdminApplication using Java 11.0.7 on DESKTOP-1RB2L96 with PID 14208 (D:\project\ming-all\ming-admin\target\classes started by mr_ji in D:\project\ming-all)
+2021-08-11 15:06:26,542:INFO main  (SpringApplication.java:664) - No active profile set, falling back to default profiles: default
+2021-08-11 15:06:27,771:WARN main  (Bootstrap.java:68) - UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2021-08-11 15:06:27,797:INFO main  (ServletWebServerApplicationContext.java:289) - Root WebApplicationContext: initialization completed in 1209 ms
+2021-08-11 15:06:29,989:INFO main  (EndpointLinksResolver.java:58) - Exposing 2 endpoint(s) beneath base path '/actuator'
+2021-08-11 15:06:30,057:INFO main  (Undertow.java:120) - starting server: Undertow - 2.2.9.Final
+2021-08-11 15:06:30,064:INFO main  (Xnio.java:95) - XNIO version 3.8.4.Final
+2021-08-11 15:06:30,073:INFO main  (NioXnio.java:58) - XNIO NIO Implementation Version 3.8.4.Final
+2021-08-11 15:06:30,127:INFO main  (Version.java:52) - JBoss Threads version 3.1.0.Final
+2021-08-11 15:06:30,316:INFO main  (UndertowWebServer.java:133) - Undertow started on port(s) 8090 (http)
+2021-08-11 15:06:30,332:INFO main  (StartupInfoLogger.java:61) - Started AdminApplication in 4.258 seconds (JVM running for 8.304)
+2021-08-11 15:11:30,226:INFO main  (StartupInfoLogger.java:55) - Starting AdminApplication using Java 11.0.7 on DESKTOP-1RB2L96 with PID 16380 (D:\project\ming-all\ming-admin\target\classes started by mr_ji in D:\project\ming-all)
+2021-08-11 15:11:30,233:INFO main  (SpringApplication.java:664) - No active profile set, falling back to default profiles: default
+2021-08-11 15:11:31,632:INFO main  (ServletWebServerApplicationContext.java:289) - Root WebApplicationContext: initialization completed in 1357 ms
+2021-08-11 15:11:32,276:INFO main  (EndpointLinksResolver.java:58) - Exposing 2 endpoint(s) beneath base path '/actuator'
+2021-08-11 15:11:32,326:INFO main  (Undertow.java:120) - starting server: Undertow - 2.2.9.Final
+2021-08-11 15:11:32,334:INFO main  (Xnio.java:95) - XNIO version 3.8.4.Final
+2021-08-11 15:11:32,341:INFO main  (NioXnio.java:58) - XNIO NIO Implementation Version 3.8.4.Final
+2021-08-11 15:11:32,398:INFO main  (Version.java:52) - JBoss Threads version 3.1.0.Final
+2021-08-11 15:11:32,634:INFO main  (UndertowWebServer.java:133) - Undertow started on port(s) 8090 (http)
+2021-08-11 15:11:32,662:INFO main  (StartupInfoLogger.java:61) - Started AdminApplication in 2.965 seconds (JVM running for 5.419)
+2021-08-11 15:13:30,917:INFO main  (StartupInfoLogger.java:55) - Starting AdminApplication using Java 11.0.7 on DESKTOP-1RB2L96 with PID 9804 (D:\project\ming-all\ming-admin\target\classes started by mr_ji in D:\project\ming-all)
+2021-08-11 15:13:30,926:INFO main  (SpringApplication.java:664) - No active profile set, falling back to default profiles: default
+2021-08-11 15:13:33,552:INFO main  (ServletWebServerApplicationContext.java:289) - Root WebApplicationContext: initialization completed in 2577 ms
+2021-08-11 15:13:34,275:INFO main  (EndpointLinksResolver.java:58) - Exposing 2 endpoint(s) beneath base path '/actuator'
+2021-08-11 15:13:34,324:INFO main  (Undertow.java:120) - starting server: Undertow - 2.2.9.Final
+2021-08-11 15:13:34,331:INFO main  (Xnio.java:95) - XNIO version 3.8.4.Final
+2021-08-11 15:13:34,342:INFO main  (NioXnio.java:58) - XNIO NIO Implementation Version 3.8.4.Final
+2021-08-11 15:13:34,399:INFO main  (Version.java:52) - JBoss Threads version 3.1.0.Final
+2021-08-11 15:13:34,591:INFO main  (UndertowWebServer.java:133) - Undertow started on port(s) 8090 (http)
+2021-08-11 15:13:34,609:INFO main  (StartupInfoLogger.java:61) - Started AdminApplication in 4.28 seconds (JVM running for 6.294)

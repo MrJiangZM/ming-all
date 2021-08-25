@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="warn" monitorInterval="30">
+
+    <!-- 一些常量 -->
+    <Properties>
+        <Property name="App">demo</Property>
+        <Property name="logDir">/data/logs</Property>
+        <Property name="splitSize">30 MB</Property>
+    </Properties>
+
+    <Appenders>
+        <!-- 输出到控制台 -->
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss,SSS}:%5p %t %X{traceId} (%F:%L) - %m%n"/>
+        </Console>
+
+        <RollingFile name="ErrorRollingFile" fileName="logs/error.log" filePattern="logs/error-%d{yyyy-MM-dd}.log">
+            <!--控制台只输出level及以上级别的信息（onMatch），其他的直接拒绝（onMismatch）-->
+            <ThresholdFilter level="error" onMatch="ACCEPT" onMismatch="DENY"/>
+            <!-- 输出日志的格式 -->
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss,SSS}:%5p %t %X{traceId} (%F:%L) - %m%n"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+            </Policies>
+            <DefaultRolloverStrategy>
+                <Delete basePath="logs/" maxDepth="1">
+                    <IfFileName glob="error-*.log"/>
+                    <IfLastModified age="10d"/>
+                </Delete>
+            </DefaultRolloverStrategy>
+        </RollingFile>
+
+        <RollingFile name="InfoRollingFile" fileName="logs/info.log" filePattern="logs/info-%d{yyyy-MM-dd}.log">
+            <Filters>
+                <ThresholdFilter level="error" onMatch="DENY" onMismatch="NEUTRAL"/>
+                <ThresholdFilter level="info" onMatch="ACCEPT" onMismatch="DENY"/>
+            </Filters>
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss,SSS}:%4p %t %X{traceId} (%F:%L) - %m%n"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+            </Policies>
+
+            <DefaultRolloverStrategy>
+                <Delete basePath="logs/" maxDepth="1">
+                    <IfFileName glob="info-*.log"/>
+                    <IfLastModified age="10d"/>
+                </Delete>
+            </DefaultRolloverStrategy>
+        </RollingFile>
+
+        <RollingFile name="RequestRollingFile" fileName="logs/request.log" filePattern="logs/request-%d{yyyy-MM-dd}.log">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss,SSS}:%5p %t %X{traceId} (%F:%L) - %m%n"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+            </Policies>
+            <DefaultRolloverStrategy>
+                <Delete basePath="logs/" maxDepth="1">
+                    <IfFileName glob="request-*.log"/>
+                    <IfLastModified age="10d"/>
+                </Delete>
+            </DefaultRolloverStrategy>
+        </RollingFile>
+
+        <RollingFile name="SqlRollingFile" fileName="logs/sql.log" filePattern="logs/sql-%d{yyyy-MM-dd}.log">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss,SSS}:%5p %t %X{traceId} (%F:%L) - %m%n"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+            </Policies>
+            <DefaultRolloverStrategy>
+                <Delete basePath="logs/" maxDepth="1">
+                    <IfFileName glob="sql-*.log"/>
+                    <IfLastModified age="5d"/>
+                </Delete>
+            </DefaultRolloverStrategy>
+        </RollingFile>
+
+    </Appenders>
+
+
+    <Loggers>
+
+        <Root level="info">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="ErrorRollingFile"/>
+            <AppenderRef ref="InfoRollingFile"/>
+        </Root>
+
+        <logger name="org.springframework.aop.framework.CglibAopProxy" level="ERROR" additivity="false"/>
+        <logger name="springfox.documentation" level="ERROR" additivity="false"/>
+        <logger name="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping" level="ERROR" additivity="false"/>
+        <logger name="org.springframework.core.env.PropertySourcesPropertyResolver" level="ERROR" additivity="false"/>
+        <logger name="org.springframework.web.servlet.DispatcherServlet" level="ERROR" additivity="false"/>
+        <logger name="io.undertow.servlet" level="ERROR" additivity="false"/>
+        <logger name="org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod" level="TRACE"/>
+
+        <logger name="jdbc.sqlonly" level="OFF" additivity="false"/>
+        <logger name="jdbc.resultset" level="OFF" additivity="false"/>
+        <logger name="jdbc.connection" level="OFF" additivity="false"/>
+        <logger name="jdbc.audit" level="OFF" additivity="false"/>
+        <logger name="jdbc.resultsettable" level="OFF" additivity="false"/>
+<!--        <logger name="jdbc.sqltiming" level="INFO" additivity="false">-->
+<!--            <appender-ref ref="console"/>-->
+<!--        </logger>-->
+
+        <Logger name="com.ming.blog.config.log.LoggerFilter" level="debug" additivity="false" includeLocation="true">
+            <AppenderRef ref="RequestRollingFile"/>
+        </Logger>
+<!--        <Logger name="com.ming.blog.*.*.repository" level="debug" includeLocation="true" additivity="false">-->
+<!--            <AppenderRef ref="SqlRollingFile"/>-->
+<!--        </Logger>-->
+    </Loggers>
+</Configuration>
