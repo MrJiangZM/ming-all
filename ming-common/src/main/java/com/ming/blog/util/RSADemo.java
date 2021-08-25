@@ -18,7 +18,7 @@ public class RSADemo {
 
         System.out.println("public key: " + base64Encode(publicBytes));
 
-        System.out.println("=====================================");
+        System.out.println("===============================  ======");
 
         System.out.println("private key: " + base64Encode(privateBytes));
     }
