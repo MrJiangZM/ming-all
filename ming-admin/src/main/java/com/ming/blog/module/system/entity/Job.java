@@ -22,7 +22,6 @@ import java.io.Serializable;
 @Entity
 @Getter
 @Setter
-@EqualsAndHashCode
 @Table(name = "sys_job")
 public class Job extends BaseEntity implements Serializable {
 

@@ -5,6 +5,7 @@ import com.ming.blog.anno.CacheKey;
 import com.ming.blog.exceptions.EntityExistException;
 import com.ming.blog.exceptions.EntityNotFoundException;
 import com.ming.blog.config.FileProperties;
+import com.ming.blog.module.system.mapper.UserMapper;
 import com.ming.blog.util.FileUtil;
 import com.ming.blog.config.PageUtil;
 import com.ming.blog.config.QueryHelp;
@@ -53,6 +54,7 @@ import java.util.stream.Collectors;
 @CacheConfig(cacheNames = "user")
 public class UserServiceImpl implements UserService {
 
+    private final UserMapper userMapper;
     private final UserRepository userRepository;
     private final FileProperties properties;
     private final RedisUtils redisUtils;
@@ -182,10 +184,7 @@ public class UserServiceImpl implements UserService {
         if (user == null) {
             throw new EntityNotFoundException(User.class, "name", userName);
         } else {
-            UserDto dto = new UserDto();
-            BeanUtils.copyProperties(user, dto);
-            return dto;
-//            return userMapper.toDto(user);
+            return userMapper.toDto(user);
         }
     }
 

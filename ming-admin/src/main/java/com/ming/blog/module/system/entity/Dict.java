@@ -22,7 +22,6 @@ import java.util.List;
 @Entity
 @Getter
 @Setter
-@EqualsAndHashCode
 @Table(name = "sys_dict")
 public class Dict extends BaseEntity implements Serializable {
 

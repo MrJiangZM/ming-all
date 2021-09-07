@@ -40,7 +40,7 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @author Zheng Jie
+ * @author MrJiangZM
  * @date 2018-11-23
  * 授权、根据token获取用户详细信息
  */
@@ -52,6 +52,7 @@ import java.util.concurrent.TimeUnit;
 public class AuthorizationController {
     private final SecurityProperties properties;
     private final RedisUtils redisUtils;
+    @Resource
     private final OnlineUserService onlineUserService;
     private final TokenProvider tokenProvider;
     private final AuthenticationManagerBuilder authenticationManagerBuilder;

@@ -24,7 +24,6 @@ import java.io.Serializable;
 @Entity
 @Getter
 @Setter
-@EqualsAndHashCode
 @Table(name = "sys_dict_detail")
 public class DictDetail extends BaseEntity implements Serializable {
 

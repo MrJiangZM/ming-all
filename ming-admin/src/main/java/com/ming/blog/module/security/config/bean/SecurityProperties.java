@@ -1,5 +1,5 @@
 /*
- *  Copyright 2019-2020 Zheng Jie
+ *  Copyright 2019-2020 MrJiangZM
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -20,7 +20,7 @@ import lombok.Data;
 /**
  * Jwt参数配置
  *
- * @author Zheng Jie
+ * @author MrJiangZM
  * @date 2019年11月28日
  */
 @Data

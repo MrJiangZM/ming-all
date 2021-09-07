@@ -55,13 +55,15 @@ public class SpringContextHolder implements ApplicationContextAware, DisposableB
      * @param property     属性key
      * @param defaultValue 默认值
      * @param requiredType 返回类型
+     *
      * @return /
      */
     public static <T> T getProperties(String property, T defaultValue, Class<T> requiredType) {
         T result = defaultValue;
         try {
             result = getBean(Environment.class).getProperty(property, requiredType);
-        } catch (Exception ignored) {}
+        } catch (Exception ignored) {
+        }
         return result;
     }
 
@@ -69,7 +71,8 @@ public class SpringContextHolder implements ApplicationContextAware, DisposableB
      * 获取SpringBoot 配置信息
      *
      * @param property 属性key
-     * @return /
+     *
+     * @return
      */
     public static String getProperties(String property) {
         return getProperties(property, null, String.class);
@@ -80,6 +83,7 @@ public class SpringContextHolder implements ApplicationContextAware, DisposableB
      *
      * @param property     属性key
      * @param requiredType 返回类型
+     *
      * @return /
      */
     public static <T> T getProperties(String property, Class<T> requiredType) {
@@ -91,7 +95,7 @@ public class SpringContextHolder implements ApplicationContextAware, DisposableB
      */
     private static void assertContextInjected() {
         if (applicationContext == null) {
-            throw new IllegalStateException("applicaitonContext属性未注入, 请在applicationContext" +
+            throw new IllegalStateException("applicationContext属性未注入, 请在applicationContext" +
                     ".xml中定义SpringContextHolder或在SpringBoot启动类中注册SpringContextHolder.");
         }
     }

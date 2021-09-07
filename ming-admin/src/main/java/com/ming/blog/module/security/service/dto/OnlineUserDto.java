@@ -1,5 +1,5 @@
 /*
- *  Copyright 2019-2020 Zheng Jie
+ *  Copyright 2019-2020 MrJiangZM
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -18,17 +18,18 @@ package com.ming.blog.module.security.service.dto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import java.io.Serializable;
 import java.util.Date;
 
 /**
  * 在线用户
  *
- * @author Zheng Jie
+ * @author MrJiangZM
  */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class OnlineUserDto {
+public class OnlineUserDto implements Serializable {
 
     /**
      * 用户名
