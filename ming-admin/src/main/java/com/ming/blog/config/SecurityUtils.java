@@ -20,6 +20,7 @@ public class SecurityUtils {
     /**
      * 获取当前登录的用户
      *
+     *
      * @return UserDetails
      */
     public static UserDetails getCurrentUser() {

@@ -36,7 +36,7 @@ jwt:
 
 login:
   # 登录缓存
-  cache-enable: false
+  cache-enable: true
   #  是否限制单用户登录
   single-login: false
   #  验证码
